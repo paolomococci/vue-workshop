@@ -14,3 +14,7 @@ import PlanForm from "./components/PlanForm.vue";
 })
 export default class App extends Vue {}
 </script>
+
+<style>
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+</style>
