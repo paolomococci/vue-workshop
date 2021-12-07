@@ -1,6 +1,7 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <PlanForm />
+  <div class="container">
+    <PlanForm />
+  </div>
 </template>
 
 <script lang="ts">
