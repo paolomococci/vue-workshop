@@ -25,7 +25,13 @@
   <div v-else>
     <ul class="list-group">
       <li class="list-group-item" v-for="task in tasks" :key="task.id">
-        <h4>{{ task.content }}</h4>
+        <h4
+          :class="{ mark: task.done }"
+          style="cursor: pointer"
+          @click="checkAsDone(task)"
+        >
+          {{ task.content }}
+        </h4>
       </li>
     </ul>
   </div>
@@ -56,12 +62,23 @@ export default defineComponent({
       newTask.value = "";
     }
 
+    function checkAsDone(task: PlanType): void {
+      task.done = !task.done;
+    }
+
     return {
       version,
       tasks,
       newTask,
       addNewTask,
+      checkAsDone,
     };
   },
 });
 </script>
+
+<style>
+.mark {
+  text-decoration: aquamarine;
+}
+</style>
