@@ -19,6 +19,13 @@
       </div>
     </div>
   </form>
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item" v-for="task in tasks" :key="task.id">
+        <h3>{{ task.content }}</h3>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">
