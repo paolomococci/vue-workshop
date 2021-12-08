@@ -4,6 +4,21 @@
     <hr />
     <h3>TypeScript demo {{ version }}</h3>
   </div>
+  <form @submit.prevent="addNewTask">
+    <div class="mb-5">
+      <label for="newTask" class="form-label"> New Task </label>
+      <input
+        class="form-control"
+        id="newTask"
+        placeholder="task to be scheduled"
+        v-model="newTask"
+        name="newTask"
+      />
+      <div class="m-2">
+        <button type="submit" class="btn btn-primary">add new task</button>
+      </div>
+    </div>
+  </form>
 </template>
 
 <script lang="ts">
