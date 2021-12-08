@@ -35,7 +35,7 @@ export default defineComponent({
       version,
       task,
       newTask,
-      addNewTask
+      addNewTask,
     };
   },
 });
