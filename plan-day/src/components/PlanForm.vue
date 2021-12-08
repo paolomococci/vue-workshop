@@ -19,10 +19,13 @@
       </div>
     </div>
   </form>
-  <div>
+  <div v-if="tasks.length === 0">
+    <h4>the list of tasks to be performed is empty</h4>
+  </div>
+  <div v-else>
     <ul class="list-group">
       <li class="list-group-item" v-for="task in tasks" :key="task.id">
-        <h3>{{ task.content }}</h3>
+        <h4>{{ task.content }}</h4>
       </li>
     </ul>
   </div>
@@ -38,13 +41,13 @@ export default defineComponent({
   setup() {
     const version = ref("version 1.0");
     const newTask = ref("");
-    const task = ref<PlanType[]>([]);
+    const tasks = ref<PlanType[]>([]);
 
     function addNewTask(): void {
       if (!newTask.value) {
         return;
       }
-      task.value.push({
+      tasks.value.push({
         id: uuidv4(),
         done: false,
         content: newTask.value,
@@ -55,7 +58,7 @@ export default defineComponent({
 
     return {
       version,
-      task,
+      tasks,
       newTask,
       addNewTask,
     };
