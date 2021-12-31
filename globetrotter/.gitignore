@@ -28,3 +28,5 @@ pnpm-debug.log*
 # additional files and directories to exclude
 README.txt
 HELP.md
+package-lock.json
+
